@@ -1,89 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Fitness Club</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #0073e6;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 24px;
-        }
-        nav {
-            text-align: center;
-            padding: 10px;
-            background: #004080;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 10px;
-            font-size: 18px;
-        }
-        .hero {
-            text-align: center;
-            padding: 50px;
-            background-image: url('https://source.unsplash.com/1600x600/?gym,fitness');
-            background-size: cover;
-            color: white;
-            font-size: 28px;
-        }
-        .container {
-            padding: 20px;
-            text-align: center;
-        }
-        .footer {
-            background-color: #0073e6;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <header>College Fitness Club</header>
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#membership">Membership</a>
-        <a href="#events">Classes & Events</a>
-        <a href="#trainers">Trainers</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="hero">Welcome to the College Fitness Club! Get Fit, Stay Healthy.</div>
-    <div class="container" id="about">
-        <h2>About Us</h2>
-        <p>We are a college fitness club dedicated to promoting a healthy lifestyle through workout programs, personal training, and group fitness classes.</p>
-        <img src="https://source.unsplash.com/400x250/?gym" alt="Gym Image">
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { FaDumbbell, FaCalendarAlt, FaUsers, FaInfoCircle, FaEnvelope } from "react-icons/fa";
+
+export default function FitnessClubWireframe() {
+  return (
+    <div className="p-6 space-y-6">
+      {/* Header */}
+      <header className="bg-gray-900 text-white p-4 text-center text-xl font-bold">
+        College Fitness Club
+      </header>
+
+      {/* Navigation */}
+      <nav className="flex justify-around bg-gray-800 text-white p-3">
+        <a href="#home" className="hover:underline">Home</a>
+        <a href="#about" className="hover:underline">About</a>
+        <a href="#membership" className="hover:underline">Membership</a>
+        <a href="#classes" className="hover:underline">Classes</a>
+        <a href="#contact" className="hover:underline">Contact</a>
+      </nav>
+
+      {/* Main Sections */}
+      <section id="home" className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card>
+          <CardContent className="flex flex-col items-center text-center p-6">
+            <FaDumbbell size={50} className="text-blue-500" />
+            <h2 className="text-lg font-semibold mt-2">State-of-the-Art Gym</h2>
+            <p>Explore our top-tier fitness equipment and facilities.</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="flex flex-col items-center text-center p-6">
+            <FaCalendarAlt size={50} className="text-green-500" />
+            <h2 className="text-lg font-semibold mt-2">Class Schedule</h2>
+            <p>Join group fitness classes led by experienced trainers.</p>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section id="about" className="p-6 bg-gray-100 rounded-lg">
+        <h2 className="text-xl font-bold text-center">About Us</h2>
+        <p className="text-center mt-2">Our mission is to provide a welcoming fitness environment for students and faculty.</p>
+      </section>
+
+      <section id="membership" className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Card>
+          <CardContent className="text-center">
+            <FaUsers size={40} className="text-yellow-500 mx-auto" />
+            <h3 className="text-lg font-semibold mt-2">Student Membership</h3>
+            <p>Affordable plans for students.</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="text-center">
+            <FaInfoCircle size={40} className="text-red-500 mx-auto" />
+            <h3 className="text-lg font-semibold mt-2">Faculty Plans</h3>
+            <p>Exclusive offers for faculty and staff.</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="text-center">
+            <FaDumbbell size={40} className="text-blue-500 mx-auto" />
+            <h3 className="text-lg font-semibold mt-2">Guest Access</h3>
+            <p>Short-term passes available.</p>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section id="contact" className="p-6 bg-gray-200 rounded-lg text-center">
+        <h2 className="text-xl font-bold">Contact Us</h2>
+        <p>Reach us for inquiries or membership registration.</p>
+        <Button className="mt-3 flex items-center mx-auto">
+          <FaEnvelope className="mr-2" /> Email Us
+        </Button>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white text-center p-4 mt-6">
+        &copy; 2025 College Fitness Club | All Rights Reserved
+      </footer>
     </div>
-    <div class="container" id="membership">
-        <h2>Membership</h2>
-        <p>Join our club and enjoy access to premium workout facilities, personal training, and group fitness sessions.</p>
-    </div>
-    <div class="container" id="events">
-        <h2>Classes & Events</h2>
-        <p>Check out our upcoming events and fitness classes to stay engaged and active.</p>
-    </div>
-    <div class="container" id="trainers">
-        <h2>Trainers</h2>
-        <p>Meet our certified trainers who will guide you on your fitness journey.</p>
-    </div>
-    <div class="container" id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: fitnessclub@college.edu | Phone: 123-456-7890</p>
-    </div>
-    <div class="footer">&copy; 2025 College Fitness Club | Stay Fit, Stay Strong</div>
-</body>
-</html>
+  );
+}
